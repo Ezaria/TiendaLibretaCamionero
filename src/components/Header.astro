@@ -1,0 +1,40 @@
+---
+
+import BurgerMenuHeader from '../components/Header/BurgerMenuHeader.astro';
+import SideMenuHeader from '../components/Header/SideMenuHeader.astro';
+
+---
+
+<header class="bg-gray-900 text-white fixed w-full top-0 z-50">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+    
+    <!-- Logo -->
+    <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Libreta Camionero</h1>
+    
+    <!-- Menú escritorio -->
+    <ul class="hidden md:flex space-x-6 text-sm sm:text-base">
+      <li><a href="#inicio" class="hover:text-yellow-400 transition-colors">Inicio</a></li>
+      <li><a href="#producto" class="hover:text-yellow-400 transition-colors">Producto</a></li>
+      <li><a href="#contacto" class="hover:text-yellow-400 transition-colors">Contacto</a></li>
+    </ul>
+    
+    <BurgerMenuHeader/>
+    
+  </nav>
+
+  <SideMenuHeader/>
+
+  <script>
+   // JS simple para el menú hamburguesa
+   const BurgerMenuHeader = document.getElementById('hamburger');
+   const SideMenuHeader = document.getElementById('mobile-menu');
+
+  if (BurgerMenuHeader && SideMenuHeader) {
+    BurgerMenuHeader.addEventListener('click', () => {
+      SideMenuHeader.classList.toggle('hidden');
+    });
+  }
+  </script>
+
+
+</header>
